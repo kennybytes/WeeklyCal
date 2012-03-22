@@ -6,6 +6,7 @@
  *  simple tests for container data type
  */
 
+#include <iostream>
 #include "entry.h"
 #include "time.h"
 #include "datime.h"
