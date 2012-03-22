@@ -302,8 +302,10 @@ int DaTime::Difference(const DaTime &b) const
 			if (Ea.operator<(Sb))
 			{
 				printf("Debugger note: Ea,Sb\n");		
-				printf("Ea:%d",Ea);
-				printf("Sb:%d",Sb);
+				printf("Ea:");
+				Ea.Display();
+				printf("Sb:");
+				Sb.Display();
 				return Ea.Difference(Sb);
 			}
 			else 
