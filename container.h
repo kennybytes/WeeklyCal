@@ -8,6 +8,8 @@
 
 #ifndef CONTAINER_H
 #define CONTAINER_H
+#include <iostream>
+using namespace std;
 
 #include <stdlib.h>
 #include "common.h"
@@ -15,7 +17,6 @@
 #include "appointment.h"
 #include "containerutil.h"
 #define MAXSIZE 100
-
 
 typedef int Position;
 
@@ -55,3 +56,5 @@ private:
 };
 #include "container_inl.h"
 #endif
+
+ostream& operator<<(ostream& s, const Container& a);

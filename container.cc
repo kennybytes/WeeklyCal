@@ -5,7 +5,6 @@
  *
  *  Container class definitions - version 2
  */
-
 #include <stdlib.h>
 #include "common.h"
 #include "entry.h"
@@ -53,6 +52,8 @@ Entry Container::remove(Position p)
     error: if Container is shorter than p, nothing done an waring produced.
 */
 {
+
+
 	verify(p,0,count-1,"remove");
 	Entry temp = get(p);
 	for(int i=p;i<count;i++)
@@ -60,6 +61,8 @@ Entry Container::remove(Position p)
 	count--;
 	return temp;
 }
+
+
 
 bool Container::operator==(const Container &other) const
 {
@@ -70,6 +73,8 @@ bool Container::operator==(const Container &other) const
 
 	return true;
 }
+
+
 bool Container::operator!=(const Container &other) const
 {
 	return !(*this==other);
@@ -79,3 +84,14 @@ void displaycontainer(Entry &x)
 {  
 	x.Display(); 
 }
+
+
+ostream& operator<<(ostream& s, const Container& a)
+{
+
+	for(int i = 0; i < a.size() ; i++)
+	{
+		a.get(i).Display();
+	}
+}
+

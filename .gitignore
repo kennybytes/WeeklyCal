@@ -1,6 +1,9 @@
 // Ignore File
 *.o
 
+// Ignore Excutables
+*
+
 // Ignore Executables
 datest
 nametest 
