@@ -2,7 +2,7 @@
 *.o
 
 // Ignore Excutables
-*
+weelycal*
 
 
 
