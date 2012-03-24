@@ -1,14 +1,13 @@
-
 CC = g++
 CFLAGS =  -ansi
 
 all: datest nametest indytest apptest testcontainer
 
 datest: driver2.o datime.o time.o common.o
-	$(CC) -o datest driver2.o datime.o time.o common.o
+	$(CC) $(CFLAGS) -o datest driver2.o datime.o time.o common.o
 
 nametest: nametest.o name.o
-	$(CC) -o nametest nametest.o name.o
+	$(CC) $(CFLAGS) -o nametest nametest.o name.o
 
 indytest: indytest.o individual.o name.o common.o
 	$(CC) -o indytest indytest.o individual.o name.o common.o
@@ -42,6 +41,9 @@ driver2.o: datime.h time.h individual.h
 datime.o: datime.h common.h time.h
 
 time.o: time.h common.h
+
+dist:
+	tar -cvf $(RELEASE_DIR)/$(RELEASE_FILE) 
 
 clean:
 	rm -f *.o
