@@ -2,22 +2,15 @@
 CCC = g++
 CCFLAGS = -ansi
 
+all: testcontainer
+
 testcontainer: container.o common.o testcontainer.o
 	$(CCC) -o testcontainer container.o common.o testcontainer.o
 
-test: container.o common.o test.o
-	$(CCC) -o test container.o common.o test.o
+testcontainer.o: container.h
+container.o: listnode.h  common.h entry.h
 
-common.o: common.h
 
-container.o: container.h entry.h common.h listnode.h listnode_inl.h
-
-testcontainer.o: container.h entry.h listnode_inl.h
-
-test.o: container.h entry.h listnode_inl.h
-
-listnode.h: listnode_inl.h
-	touch container.h
 
 clean:
 	rm -f *.o
